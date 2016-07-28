@@ -81,6 +81,15 @@ if (!isSource) {
   });
 }
 
+// Testing broadcasting transmission: 
+const transmit = () => {
+  for (var x = 0; x < connections.length; x++) {
+    connections[x].send('hello world: ' + messageNum);
+  }
+  messageNum++;
+}
+
+setInterval(transmit, 1000);
 
 /********************* ORIGINAL MULTICALLS REPO CODE ********************* */
 
