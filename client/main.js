@@ -12,6 +12,7 @@ const getMyId = () => new Promise((resolve, reject) => {
 
 var peerId; 
 
+// Original function from ReelTime, might need to be modified. 
 const establishPeerConnection = (sourceId) => new Promise((resolve, reject) => {
   const connect = () => {
     if (sourceId) {
@@ -50,6 +51,13 @@ peer.on('open', function(){
   $('#mypeerid').append("Your peer id: " + peer.id);
   peerId = peer.id;
 });
+
+
+
+
+/********************* ORIGINAL MULTICALLS REPO CODE ********************* */
+
+// Keeping it here for reference or utilization, will probably need to be deleted in the end. 
 peer.on('call', function(call){
   console.log("Call received");
   // Answer the call automatically (instead of prompting user) for demo purposes
